@@ -5,6 +5,25 @@
   position: relative;
 }
 
+.search-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.search-column {
+  flex: 1;
+  position: relative;
+}
+
+.search-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
 .search-input-container {
   display: flex;
   gap: 10px;
@@ -35,6 +54,7 @@
   cursor: pointer;
   transition: background-color 0.3s;
   min-width: 120px;
+  white-space: nowrap;
 }
 
 .search-button:hover:not(:disabled) {
@@ -46,19 +66,37 @@
   cursor: not-allowed;
 }
 
+.vietnam-button {
+  background-color: #FF0000;
+}
+
+.vietnam-button:hover:not(:disabled) {
+  background-color: #CC0000;
+}
+
 .search-results {
   position: absolute;
   top: 100%;
   left: 0;
-  right: 120px;
+  right: 0;
   margin-top: 5px;
   background: white;
   border: 1px solid #ccc;
   border-radius: 8px;
-  max-height: 300px;
+  max-height: 350px;
   overflow-y: auto;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.vietnam-results-header {
+  padding: 10px 16px;
+  background: #FF0000;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .search-result-item {
@@ -76,16 +114,51 @@
   background-color: #f5f5f5;
 }
 
+.vietnam-result {
+  padding: 10px 16px;
+}
+
+.vietnam-result:hover {
+  background-color: #fff5f5;
+}
+
+.result-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.result-address {
+  font-size: 12px;
+  color: #666;
+}
+
 .search-result-item.no-results {
   cursor: default;
   color: #666;
+  text-align: center;
 }
 
 .search-result-item.no-results:hover {
   background-color: transparent;
 }
 
+@media (max-width: 768px) {
+  .search-row {
+    flex-direction: column;
+  }
+  
+  .search-button {
+    min-width: 100px;
+    padding: 12px 16px;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
+  .search-label {
+    color: #fff;
+  }
+
   .search-input {
     background-color: #333;
     color: #fff;
@@ -103,5 +176,17 @@
 
   .search-result-item:hover {
     background-color: #444;
+  }
+
+  .vietnam-result:hover {
+    background-color: #3a0000;
+  }
+
+  .result-name {
+    color: #fff;
+  }
+
+  .result-address {
+    color: #ccc;
   }
 }
