@@ -1,2 +1,1 @@
-# openstreetmap_test
-Testing OpenStreetMap API calling
+# Testing OSM API call via a simple React app
