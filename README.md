@@ -1,1 +1,2 @@
-# Testing OSM API call via a simple React app
+# CS252 Labworks app
+Simple location search app built with React + Typescript that calls OpenStreetMap and OpenWeather APIs.
