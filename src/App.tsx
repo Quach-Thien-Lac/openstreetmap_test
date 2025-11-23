@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>OpenStreetMap React App</h1>
+      <h1>Location Search</h1>
       <AddressSearch onSearchResult={handleSearchResult} />
       {selectedLocation && (
         <WeatherInfo 
