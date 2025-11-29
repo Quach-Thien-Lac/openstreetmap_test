@@ -3,6 +3,7 @@ import './App.css'
 import Map from './Map'
 import AddressSearch from './AddressSearch'
 import WeatherInfo from './WeatherInfo'
+import TranslationWidget from './TranslationWidget'
 
 function App() {
   const [mapCenter, setMapCenter] = useState<[number, number]>([51.505, -0.09])
@@ -24,12 +25,15 @@ function App() {
     <div className="app-container">
       <h1>Location Search</h1>
       <AddressSearch onSearchResult={handleSearchResult} />
+      <TranslationWidget />
       {selectedLocation && (
-        <WeatherInfo 
-          lat={selectedLocation.lat} 
-          lon={selectedLocation.lon} 
-          locationName={selectedLocation.name}
-        />
+        <>
+          <WeatherInfo 
+            lat={selectedLocation.lat} 
+            lon={selectedLocation.lon} 
+            locationName={selectedLocation.name}
+          />
+        </>
       )}
       <div className="map-wrapper">
         <Map center={mapCenter} zoom={mapZoom} key={`${mapCenter[0]}-${mapCenter[1]}`} />
